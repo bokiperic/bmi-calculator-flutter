@@ -4,19 +4,23 @@ const cardMargin = EdgeInsets.all(15.0);
 var borderRadiusValue = BorderRadius.circular(10.0);
 
 class ReusableCard extends StatelessWidget {
-  ReusableCard({@required this.colour, this.cardChild});
+  ReusableCard({@required this.colour, this.cardChild, this.onPress});
 
   final Color colour;
   final Widget cardChild;
+  final Function onPress;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: cardChild,
-      margin: cardMargin,
-      decoration: BoxDecoration(
-        color: colour,
-        borderRadius: borderRadiusValue,
+    return GestureDetector(
+      onTap: onPress,
+      child: Container(
+        child: cardChild,
+        margin: cardMargin,
+        decoration: BoxDecoration(
+          color: colour,
+          borderRadius: borderRadiusValue,
+        ),
       ),
     );
   }
