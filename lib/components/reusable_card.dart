@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'constants.dart';
+import '../constants.dart';
 
 var borderRadiusValue = BorderRadius.circular(10.0);
 
